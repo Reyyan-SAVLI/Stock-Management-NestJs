@@ -33,5 +33,9 @@ export class UserService {
         await this.userRepository.save(user);
 
     }
+
+    findEmail(email: string): Promise<User>{
+        return this.userRepository.findOneBy({email});
+    }
     
 }

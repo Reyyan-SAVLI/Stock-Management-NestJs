@@ -7,13 +7,14 @@ import { MarketModule } from './market/market.module';
 import { StorageModule } from './storage/storage.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { getConfig } from './db/data-source.config';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [ TypeOrmModule.forRoot(getConfig()),
     UserModule, 
     ProductModule, 
     MarketModule, 
-    StorageModule],
+    StorageModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

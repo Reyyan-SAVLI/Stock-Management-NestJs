@@ -1,3 +1,7 @@
+import { Market } from "src/entities/market.entity";
+import { Product } from "src/entities/product.entity";
+import { Storage } from "src/entities/storage.entity";
+import { User } from "src/entities/user.entity";
 import { DataSourceOptions } from "typeorm";
 
 export function getConfig(){
@@ -8,7 +12,7 @@ export function getConfig(){
     username: 'root',
     password: '1234',
     database: 'stock_management',
-    entities: [],
+    entities: [User, Product, Market, Storage],
     synchronize: true,
    } as DataSourceOptions;
 }
