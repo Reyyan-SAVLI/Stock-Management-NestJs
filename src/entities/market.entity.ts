@@ -1,15 +1,20 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Storage } from "./storage.entity";
+import { Product } from "./product.entity";
 
 @Entity()
-export class Market{
+export class Market extends Product{
    @PrimaryGeneratedColumn()
-   id: number;
+   MId: number;
 
    @Column()
    marketName: string;
 
    @Column()
    marketCode: number;
+
+   @Column()
+   quantity: number;
 
    @Column()
    city: string;
@@ -19,4 +24,10 @@ export class Market{
 
    @Column()
    address: string;
+
+   @ManyToOne(()=>Storage, (storage)=> storage.markets)
+   storage: Storage;
+
+   @OneToMany(()=> Product, (product)=> product.storage)
+   products: Product[];
 }

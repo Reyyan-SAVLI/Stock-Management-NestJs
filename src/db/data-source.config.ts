@@ -1,3 +1,4 @@
+import { Main } from "src/entities/main.entity";
 import { Market } from "src/entities/market.entity";
 import { Product } from "src/entities/product.entity";
 import { Storage } from "src/entities/storage.entity";
@@ -12,7 +13,7 @@ export function getConfig(){
     username: 'root',
     password: '1234',
     database: 'stock_management',
-    entities: [User, Product, Market, Storage],
+    entities: [User, Product, Market, Storage, Main],
     synchronize: true,
    } as DataSourceOptions;
 }

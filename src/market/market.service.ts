@@ -11,7 +11,11 @@ export class MarketService {
         private readonly marketRepository: Repository<Market>){}
     
     async getMarkets(){
-            return await this.marketRepository.find();
+            return await this.marketRepository.find({
+                where:{
+                    
+                }
+            });
     }
 
     async addMarket(addMarketDto: AddMarketDto){
