@@ -1,6 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Market } from "./market.entity";
 import { Product } from "./product.entity";
+import { Main } from "./main.entity";
 
 @Entity()
 export class Storage extends Product{
@@ -28,6 +29,6 @@ export class Storage extends Product{
    @OneToMany(()=> Market, (market)=> market.storage)
    markets: Market[];
 
-   @OneToMany(()=> Product, (product)=> product.storage)
-   products: Product[];
+   @OneToMany(()=> Main, (product)=> product.storage)
+   products: Main[];
 }

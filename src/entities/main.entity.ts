@@ -11,4 +11,10 @@ export class Main extends Product{
     @Column()
     quantity: number;
 
+    @ManyToOne(()=>Storage, (storage)=> storage.products)
+    storage: Storage;
+
+    @ManyToOne(()=>Market, (market)=> market.products)
+    market: Market;
+
 }

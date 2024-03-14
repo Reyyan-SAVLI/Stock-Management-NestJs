@@ -1,6 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { AddProductDto } from "./add-product.dto";
 
-export class AddStorageDto{
+export class AddStorageDto extends AddProductDto{
     @ApiProperty({
         example: 'Adana Bölge Müdürlüğü'
     })

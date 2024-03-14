@@ -37,7 +37,7 @@ export class AddProductDto{
     productCode: number;
 
     @ApiProperty({
-        example: '3300'
+        example: '5000'
     })
     quantity: number;
 

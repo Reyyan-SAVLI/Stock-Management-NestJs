@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { AddProductDto } from "./add-product.dto";
 
-export class AddMarketDto extends AddProductDto{
+
+export class UpdateMarketDto{
     @ApiProperty({
         example: 'Aladağ Adana'
     })
@@ -13,17 +13,17 @@ export class AddMarketDto extends AddProductDto{
     marketCode: number;
 
     @ApiProperty({
-        example: 'Adana'
+        example: 'Bingo Sıvı Çamaşır Deterjanı Renkli 3 L'
     })
-    city: string;
+    productName: string;
 
     @ApiProperty({
-        example: 'Aladağ'
+        example: 22002454
     })
-    province: string;
+    productCode: number;
 
     @ApiProperty({
-        example: 'Sinanpaşa Mah. İnönü Cad. No:10'
+        example: 1000
     })
-    address: string;
+    quantity: number;
 }

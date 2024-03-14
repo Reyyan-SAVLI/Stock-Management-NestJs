@@ -1,11 +1,9 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Storage } from "./storage.entity";
+import { Column, ManyToOne} from "typeorm";
 import { Market } from "./market.entity";
 
-@Entity()
+
+
 export abstract class Product{
-    @PrimaryGeneratedColumn()
-    pId: number;
 
     @Column()
     name: string;
@@ -29,16 +27,10 @@ export abstract class Product{
     productCode: number;
 
     @Column()
-    quantity: number;
-
-    @Column()
     category: string;
 
     @Column()
     subcategory: string;
-
-    @ManyToOne(()=>Storage, (storage)=> storage.products)
-    storage: Storage;
 
     @ManyToOne(()=>Market, (market)=> market.products)
     market: Market;
